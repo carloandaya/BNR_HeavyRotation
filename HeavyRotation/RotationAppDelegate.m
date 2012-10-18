@@ -18,9 +18,27 @@
     // Get the device object
     UIDevice *device = [UIDevice currentDevice];
     
+    // Tell it to start monitoring the accelerometer for orientation
+    [device beginGeneratingDeviceOrientationNotifications];
+    
+    // Get the notification center for the app
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    
+    // Add yourself (RotationAppDelegate) as an observer
+    [nc addObserver:self
+           selector:@selector(orientationChanged:)
+               name:UIDeviceOrientationDidChangeNotification
+             object:device];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)orientationChanged:(NSNotification *)note
+{
+    // Log the constant that represents the current orientation
+    NSLog(@"orientationChanged: %d", [[note object] orientation]);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
