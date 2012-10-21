@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230EC8A11631172F006BB025 /* HeavyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 230EC89F1631172F006BB025 /* HeavyViewController.m */; };
+		230EC8A21631172F006BB025 /* HeavyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230EC8A01631172F006BB025 /* HeavyViewController.xib */; };
+		230EC8A516311A13006BB025 /* joeeye.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 230EC8A416311A13006BB025 /* joeeye.jpg */; };
 		231DB2F4162FF0B600CC3599 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 231DB2F3162FF0B600CC3599 /* UIKit.framework */; };
 		231DB2F6162FF0B600CC3599 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 231DB2F5162FF0B600CC3599 /* Foundation.framework */; };
 		231DB2F8162FF0B600CC3599 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 231DB2F7162FF0B600CC3599 /* CoreGraphics.framework */; };
@@ -19,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		230EC89E1631172F006BB025 /* HeavyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeavyViewController.h; sourceTree = "<group>"; };
+		230EC89F1631172F006BB025 /* HeavyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeavyViewController.m; sourceTree = "<group>"; };
+		230EC8A01631172F006BB025 /* HeavyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeavyViewController.xib; sourceTree = "<group>"; };
+		230EC8A416311A13006BB025 /* joeeye.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = joeeye.jpg; sourceTree = "<group>"; };
 		231DB2EF162FF0B600CC3599 /* HeavyRotation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeavyRotation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		231DB2F3162FF0B600CC3599 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		231DB2F5162FF0B600CC3599 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -78,7 +85,11 @@
 		231DB2F9162FF0B600CC3599 /* HeavyRotation */ = {
 			isa = PBXGroup;
 			children = (
+				230EC8A416311A13006BB025 /* joeeye.jpg */,
 				231DB302162FF0B600CC3599 /* RotationAppDelegate.h */,
+				230EC89E1631172F006BB025 /* HeavyViewController.h */,
+				230EC89F1631172F006BB025 /* HeavyViewController.m */,
+				230EC8A01631172F006BB025 /* HeavyViewController.xib */,
 				231DB303162FF0B600CC3599 /* RotationAppDelegate.m */,
 				231DB2FA162FF0B600CC3599 /* Supporting Files */,
 			);
@@ -155,6 +166,8 @@
 				231DB306162FF0B600CC3599 /* Default.png in Resources */,
 				231DB308162FF0B600CC3599 /* Default@2x.png in Resources */,
 				231DB30A162FF0B600CC3599 /* Default-568h@2x.png in Resources */,
+				230EC8A21631172F006BB025 /* HeavyViewController.xib in Resources */,
+				230EC8A516311A13006BB025 /* joeeye.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +180,7 @@
 			files = (
 				231DB300162FF0B600CC3599 /* main.m in Sources */,
 				231DB304162FF0B600CC3599 /* RotationAppDelegate.m in Sources */,
+				230EC8A11631172F006BB025 /* HeavyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +254,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HeavyRotation/HeavyRotation-Prefix.pch";
 				INFOPLIST_FILE = "HeavyRotation/HeavyRotation-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -251,7 +267,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HeavyRotation/HeavyRotation-Prefix.pch";
 				INFOPLIST_FILE = "HeavyRotation/HeavyRotation-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -275,6 +293,7 @@
 				231DB30F162FF0B600CC3599 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

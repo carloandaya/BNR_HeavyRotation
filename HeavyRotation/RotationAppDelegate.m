@@ -7,6 +7,7 @@
 //
 
 #import "RotationAppDelegate.h"
+#import "HeavyViewController.h"
 
 @implementation RotationAppDelegate
 
@@ -21,6 +22,18 @@
     // Tell it to start monitoring the accelerometer for orientation
     [device beginGeneratingDeviceOrientationNotifications];
     
+    // Turn on proximity monitoring
+    [device setProximityMonitoringEnabled:YES];
+    
+    if ([device isProximityMonitoringEnabled]) {
+        NSLog(@"Proximity monitoring enabled.");
+    }
+    else
+    {
+        NSLog(@"Proximity monitoring not enabled.");
+    }
+        
+    
     // Get the notification center for the app
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     
@@ -29,6 +42,15 @@
            selector:@selector(orientationChanged:)
                name:UIDeviceOrientationDidChangeNotification
              object:device];
+    
+    // Add yourself as an observer to proximity state changes
+    [nc addObserver:self
+           selector:@selector(proximityChanged:)
+               name:UIDeviceProximityStateDidChangeNotification
+             object:device];
+    
+    HeavyViewController *hvc = [[HeavyViewController alloc] init];
+    [[self window] setRootViewController:hvc];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -39,6 +61,11 @@
 {
     // Log the constant that represents the current orientation
     NSLog(@"orientationChanged: %d", [[note object] orientation]);
+}
+
+- (void)proximityChanged:(NSNotification *)note
+{
+    NSLog(@"proximityChanged: %c", [[note object] proximityState]);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
